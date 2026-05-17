@@ -1,0 +1,9 @@
+{
+  "name": "smart-poker-lab",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node src/generate-site.js",
+    "check": "node --check src/generate-site.js && node --check src/english-content.js && node --check script.js"
+  }
+}

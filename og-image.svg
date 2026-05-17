@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f4ed"/>
+  <rect x="70" y="70" width="1060" height="490" rx="28" fill="#1f7a67"/>
+  <rect x="110" y="110" width="980" height="410" rx="24" fill="none" stroke="#c6eadb" stroke-width="4" stroke-dasharray="14 16"/>
+  <g transform="translate(710 180)">
+    <rect x="0" y="0" width="86" height="122" rx="12" fill="#fff"/>
+    <rect x="104" y="0" width="86" height="122" rx="12" fill="#fff"/>
+    <rect x="208" y="0" width="86" height="122" rx="12" fill="#fff"/>
+    <text x="43" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="#d94d3f">A♥</text>
+    <text x="147" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="#17211d">7♣</text>
+    <text x="251" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="#d94d3f">2♦</text>
+  </g>
+  <text x="150" y="220" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="#fff">Smart Poker Lab</text>
+  <text x="150" y="298" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#c6eadb">Comic Poker Training Lab</text>
+  <text x="150" y="378" font-family="Arial, sans-serif" font-size="38" fill="#fff">Rules, GTO basics, tools, and hand reviews</text>
+  <text x="150" y="452" font-family="Arial, sans-serif" font-size="28" fill="#c6eadb">Education only · No real-money gambling services</text>
+</svg>

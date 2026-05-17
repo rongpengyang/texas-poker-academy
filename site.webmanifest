@@ -1,0 +1,45 @@
+{
+  "name": "Smart Poker Lab",
+  "short_name": "SmartPokerLab",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f4ed",
+  "theme_color": "#17211d",
+  "description": "Comic-style Texas Hold'em study, drills, hand reviews, and local progress tracking.",
+  "categories": ["education", "games", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/app-icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Daily Workout",
+      "short_name": "Daily",
+      "url": "/tools/daily-hand/",
+      "description": "Open today's 15-minute poker decision workflow."
+    },
+    {
+      "name": "Practice Mode",
+      "short_name": "Practice",
+      "url": "/practice/",
+      "description": "Run scored drill packs."
+    },
+    {
+      "name": "Progress Report",
+      "short_name": "Progress",
+      "url": "/progress/",
+      "description": "Review local Smart Score and leaks."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+texas-poker-site-planning
+*.zip
+node_modules
+npm-cache
+yarn-cache

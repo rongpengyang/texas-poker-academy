@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Smart Poker Lab app icon">
+  <rect width="512" height="512" rx="96" fill="#07110f"/>
+  <path d="M72 340c40 56 101 84 184 84s144-28 184-84" fill="none" stroke="#c9f4df" stroke-width="28" stroke-linecap="round"/>
+  <rect x="118" y="98" width="276" height="238" rx="34" fill="#f8f4e8" stroke="#c9f4df" stroke-width="14"/>
+  <path d="M256 132c-54 52-92 92-92 135 0 28 20 49 48 49 20 0 34-10 44-24 10 14 24 24 44 24 28 0 48-21 48-49 0-43-38-83-92-135Z" fill="#0a302b"/>
+  <circle cx="174" cy="176" r="18" fill="#ff5b4f"/>
+  <circle cx="338" cy="176" r="18" fill="#f1b443"/>
+  <path d="M192 374h128" stroke="#f1b443" stroke-width="22" stroke-linecap="round"/>
+</svg>
