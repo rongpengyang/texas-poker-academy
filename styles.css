@@ -1,20 +1,22 @@
 :root {
-  --ink: #101816;
-  --muted: #5f6f68;
-  --paper: #f4f7f2;
-  --surface: #ffffff;
-  --line: #d6e0d8;
-  --felt: #1e8a71;
-  --felt-dark: #0a302b;
-  --coral: #ff5b4f;
-  --gold: #f1b443;
-  --mint: #c9f4df;
-  --blue: #3f7dd9;
-  --violet: #7657ff;
-  --night: #07110f;
-  --night-2: #10231f;
-  --shadow: 0 24px 70px rgba(16, 24, 22, 0.16);
-  --glow: 0 0 0 1px rgba(201, 244, 223, 0.18), 0 24px 80px rgba(30, 138, 113, 0.18);
+  --ink: #211c16;
+  --muted: #6f665b;
+  --paper: #f7efe4;
+  --surface: #fffdf8;
+  --line: #e3d7c4;
+  --felt: #217964;
+  --felt-dark: #12362d;
+  --coral: #d95f43;
+  --gold: #e5a93c;
+  --mint: #d9f2df;
+  --blue: #3f70b7;
+  --violet: #6d5bd6;
+  --night: #161713;
+  --night-2: #25231d;
+  --shadow: 0 20px 54px rgba(33, 28, 22, 0.13);
+  --glow: 0 0 0 1px rgba(217, 242, 223, 0.22), 0 22px 62px rgba(33, 121, 100, 0.14);
+  --paper-shadow: 0 18px 42px rgba(33, 28, 22, 0.08);
+  --panel-shadow: 0 24px 70px rgba(22, 23, 19, 0.18);
 }
 
 * {
@@ -36,7 +38,9 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(180deg, #f9fbf6 0%, var(--paper) 42%, #edf5ee 100%);
+    radial-gradient(circle at 18% 0%, rgba(229, 169, 60, 0.13), transparent 30%),
+    radial-gradient(circle at 84% 8%, rgba(33, 121, 100, 0.1), transparent 28%),
+    linear-gradient(180deg, #fbf7ef 0%, var(--paper) 46%, #eee4d6 100%);
   font-family:
     Inter, Arial, sans-serif;
   line-height: 1.6;
@@ -6296,5 +6300,605 @@ textarea {
   .compliance-strip {
     margin-right: 10px;
     margin-left: 10px;
+  }
+}
+
+/* Step 9 core Lovable UI replacement */
+h1,
+h2,
+h3,
+.content-page h1,
+.content-page h2,
+.content-page h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+}
+
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(360px, 42vw, 520px);
+  display: grid;
+  align-content: end;
+  padding-top: clamp(54px, 7vw, 86px);
+  padding-bottom: clamp(34px, 5vw, 58px);
+  border-bottom: 1px solid rgba(33, 28, 22, 0.1);
+  background:
+    radial-gradient(circle at 80% 18%, rgba(229, 169, 60, 0.2), transparent 30%),
+    radial-gradient(circle at 8% 12%, rgba(33, 121, 100, 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(245, 236, 220, 0.92) 54%, rgba(227, 215, 196, 0.8)),
+    var(--paper);
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  right: clamp(18px, 5vw, 72px);
+  bottom: 34px;
+  z-index: -1;
+  width: min(34vw, 420px);
+  height: min(58%, 280px);
+  background:
+    linear-gradient(135deg, rgba(22, 23, 19, 0.94), rgba(18, 54, 45, 0.9)),
+    var(--night);
+  border: 1px solid rgba(217, 242, 223, 0.18);
+  border-radius: 8px;
+  box-shadow: var(--panel-shadow);
+  transform: rotate(1deg);
+  opacity: 0.1;
+}
+
+.page-hero h1 {
+  max-width: 920px;
+  font-size: clamp(42px, 6vw, 76px);
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: min(780px, 100%);
+  color: #50483e;
+}
+
+.practice-hero,
+.progress-hero,
+.analyze-hero,
+.study-hero,
+.tools-hero,
+.tool-detail-hero,
+.hand-review-hero {
+  background:
+    radial-gradient(circle at 82% 16%, rgba(217, 242, 223, 0.34), transparent 28%),
+    radial-gradient(circle at 10% 4%, rgba(229, 169, 60, 0.2), transparent 30%),
+    linear-gradient(135deg, #fffdf8 0%, #f5ecdc 56%, #e9decd 100%);
+}
+
+.tools-section,
+.practice-mode-section,
+.study-mode-section,
+.analyze-lite-section,
+.progress-dashboard-section,
+.article-section {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(229, 169, 60, 0.1), transparent 26%),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.72), rgba(243, 234, 220, 0.9)),
+    var(--paper);
+}
+
+.section-heading {
+  max-width: 960px;
+}
+
+.section-heading p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.primary-action,
+.tool-button {
+  border-color: rgba(33, 121, 100, 0.36);
+  background:
+    linear-gradient(135deg, var(--mint), #f4d990);
+  box-shadow: 0 12px 28px rgba(33, 121, 100, 0.14);
+}
+
+.secondary-action,
+.mini-action {
+  border-color: rgba(33, 28, 22, 0.12);
+  background: rgba(255, 253, 248, 0.88);
+}
+
+.tool-shortcuts a,
+.learning-path a,
+.article-card,
+.pack-card,
+.tool-panel,
+.practice-table,
+.practice-session,
+.analyze-form-panel,
+.study-browser,
+.study-report,
+.progress-panel,
+.dashboard-v2-card,
+.weekly-coach-grid article,
+.next-action-card,
+.glossary-item,
+details {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(251, 247, 239, 0.98));
+  border: 1px solid rgba(33, 28, 22, 0.1);
+  box-shadow: var(--paper-shadow);
+}
+
+.tool-shortcuts a:hover,
+.tool-shortcuts a:focus-visible,
+.learning-path a:hover,
+.learning-path a:focus-visible,
+.article-card:hover,
+.article-card:focus-visible,
+.pack-card:hover,
+.pack-card:focus-visible {
+  border-color: rgba(33, 121, 100, 0.34);
+  box-shadow: 0 24px 56px rgba(33, 28, 22, 0.12);
+}
+
+.tools-section .tool-note,
+.standalone-tool .tool-note {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  color: #4d453b;
+  background:
+    linear-gradient(135deg, rgba(217, 242, 223, 0.68), rgba(255, 253, 248, 0.92));
+  border: 1px solid rgba(33, 121, 100, 0.2);
+  border-radius: 8px;
+}
+
+.tool-shortcuts {
+  align-items: stretch;
+}
+
+.tool-shortcuts a {
+  min-height: 124px;
+  align-content: start;
+}
+
+.tool-shortcuts strong,
+.learning-path strong,
+.article-card h3,
+.pack-card strong {
+  color: var(--ink);
+}
+
+.tool-panel {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+}
+
+.tool-panel::before,
+.article-card::before,
+.resource-grid article::before,
+.training-day::before {
+  height: 5px;
+  background: linear-gradient(90deg, var(--felt), var(--gold), var(--coral));
+}
+
+.tool-panel h2,
+.practice-table h2,
+.analyze-form-panel h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.05;
+}
+
+.tool-result,
+.review-output,
+.daily-related-box,
+.daily-route-panel,
+.dashboard-onboarding,
+.range-matrix-shell,
+.feedback-stack,
+.range-compare-grid article,
+.range-diagnosis-grid article,
+.range-vs-range-bars article,
+.practice-history-item,
+.analyze-report-output,
+.analyze-saved,
+.analyze-saved-item,
+.study-linked-box,
+.study-compare-box,
+.study-resource-links,
+.study-report-grid section,
+.study-mistake-box,
+.training-question {
+  background: #fffaf1;
+  border: 1px solid rgba(33, 28, 22, 0.1);
+  box-shadow: 0 10px 26px rgba(33, 28, 22, 0.06);
+}
+
+.action-lab-section,
+.cockpit-section {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(217, 242, 223, 0.16), transparent 30%),
+    radial-gradient(circle at 84% 10%, rgba(229, 169, 60, 0.14), transparent 28%),
+    linear-gradient(135deg, #161713 0%, #25231d 52%, #12362d 100%);
+}
+
+.action-loop-banner article,
+.dashboard-card,
+.smart-score-card,
+.practice-stats div,
+.study-lens-grid article {
+  border-color: rgba(217, 242, 223, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(229, 169, 60, 0.12), transparent 40%),
+    linear-gradient(145deg, rgba(22, 23, 19, 0.98), rgba(18, 54, 45, 0.96));
+  box-shadow: var(--glow);
+}
+
+.practice-routine-bar,
+.study-command-bar,
+.dashboard-v2-shell,
+.range-challenge-card,
+.progress-backup-panel {
+  border: 1px solid rgba(33, 121, 100, 0.18);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(229, 169, 60, 0.15), transparent 28%),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(238, 247, 238, 0.94));
+  box-shadow: var(--paper-shadow);
+}
+
+.practice-routine-bar,
+.study-command-bar {
+  color: var(--surface);
+  background:
+    radial-gradient(circle at 86% 0%, rgba(229, 169, 60, 0.18), transparent 34%),
+    linear-gradient(135deg, #161713, #12362d);
+}
+
+.practice-table,
+.practice-session,
+.analyze-form-panel,
+.study-report {
+  background:
+    radial-gradient(circle at top right, rgba(217, 242, 223, 0.26), transparent 34%),
+    linear-gradient(180deg, #fffdf8, #fff8ef);
+}
+
+.practice-session,
+.analyze-report-panel,
+.study-browser {
+  top: 92px;
+}
+
+.practice-controls,
+.study-filters,
+.range-editor-toolbar,
+.review-form-grid,
+.street-input-grid {
+  padding: 14px;
+  background: rgba(255, 253, 248, 0.72);
+  border: 1px solid rgba(33, 28, 22, 0.08);
+  border-radius: 8px;
+}
+
+.practice-controls select,
+.study-filters select,
+.review-form-grid input,
+.review-form-grid select,
+.wide-label textarea,
+.street-input-grid textarea,
+input,
+select,
+textarea {
+  background: #fffaf1;
+  border-color: rgba(33, 28, 22, 0.14);
+}
+
+.range-trainer-panel {
+  grid-column: 1 / -1;
+}
+
+.range-trainer-panel .trainer-console {
+  padding: clamp(10px, 2vw, 16px);
+  background: rgba(255, 253, 248, 0.68);
+  border: 1px solid rgba(33, 28, 22, 0.08);
+  border-radius: 8px;
+}
+
+.range-matrix-scroll {
+  background:
+    linear-gradient(180deg, #fffdf8, #f8f0e3);
+  box-shadow: inset 0 0 0 1px rgba(33, 28, 22, 0.04);
+}
+
+.range-matrix-table th {
+  background: linear-gradient(135deg, var(--night), var(--felt-dark));
+}
+
+.matrix-cell span,
+.matrix-action-button {
+  border: 1px solid rgba(33, 28, 22, 0.08);
+}
+
+.analyze-command-grid article,
+.progress-panel,
+.weekly-coach-grid article,
+.next-action-card,
+.dashboard-pack-row,
+.badge-card,
+.spaced-review-item {
+  background:
+    linear-gradient(180deg, #fffdf8, #fff7ed);
+}
+
+.analyze-report-panel {
+  background:
+    radial-gradient(circle at top right, rgba(229, 169, 60, 0.16), transparent 34%),
+    linear-gradient(145deg, #161713, #12362d);
+  box-shadow: var(--panel-shadow);
+}
+
+.analyze-report-output,
+.analyze-saved {
+  background: rgba(255, 253, 248, 0.94);
+}
+
+.progress-dashboard-section .leak-dashboard-panel {
+  background:
+    radial-gradient(circle at top right, rgba(217, 242, 223, 0.26), transparent 34%),
+    linear-gradient(180deg, #fffdf8, #fff6ea);
+}
+
+.dashboard-onboarding {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(229, 169, 60, 0.18), transparent 32%),
+    linear-gradient(135deg, #fffdf8, #edf8ef);
+}
+
+.study-command-bar {
+  margin-bottom: 18px;
+}
+
+.study-list-button {
+  background: #fffaf1;
+}
+
+.study-list-button:hover,
+.study-list-button:focus-visible,
+.study-list-button.is-active {
+  background:
+    linear-gradient(135deg, rgba(217, 242, 223, 0.86), rgba(255, 253, 248, 0.96));
+}
+
+.mode-visual-panel,
+.data-insight-card {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.92), rgba(255, 247, 237, 0.9));
+  border-color: rgba(33, 28, 22, 0.1);
+  box-shadow: var(--paper-shadow);
+}
+
+.content-page {
+  max-width: 1060px;
+}
+
+.article-content-page,
+.hand-review-content-page {
+  padding-top: clamp(44px, 7vw, 78px);
+}
+
+.article-content-page > .eyebrow,
+.hand-review-content-page > .eyebrow {
+  color: var(--felt);
+}
+
+.content-page h1 {
+  max-width: 920px;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 0.98;
+}
+
+.content-page .lead {
+  max-width: 780px;
+  color: #4c443a;
+  font-size: clamp(19px, 2.2vw, 24px) !important;
+}
+
+.content-page > p:not(.lead),
+.content-page > ul,
+.content-page > ol {
+  max-width: 780px;
+}
+
+.mini-meta span {
+  color: var(--felt-dark);
+  background:
+    linear-gradient(135deg, rgba(217, 242, 223, 0.96), rgba(255, 253, 248, 0.9));
+  border: 1px solid rgba(33, 121, 100, 0.14);
+}
+
+.deep-learning {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(33, 28, 22, 0.12);
+}
+
+.deep-learning h2 {
+  max-width: 820px;
+}
+
+.comic-strip,
+.responsible-box,
+.training-question {
+  background:
+    radial-gradient(circle at top right, rgba(229, 169, 60, 0.18), transparent 34%),
+    linear-gradient(180deg, #fffdf8, #fff4e6);
+  border: 1px solid rgba(33, 28, 22, 0.1);
+  box-shadow: var(--paper-shadow);
+}
+
+.concept-map-grid article,
+.concept-matrix article,
+.drill-pack-seo-card {
+  background:
+    linear-gradient(180deg, #fffdf8, #fff7ed);
+  border-color: rgba(33, 28, 22, 0.1);
+  box-shadow: 0 12px 30px rgba(33, 28, 22, 0.07);
+}
+
+.hand-review {
+  align-items: stretch;
+  background:
+    linear-gradient(180deg, #fffdf8, #fff7ed);
+  box-shadow: var(--paper-shadow);
+}
+
+.hand-board {
+  background:
+    radial-gradient(circle at center, rgba(217, 242, 223, 0.18), transparent 36%),
+    linear-gradient(145deg, #12362d, #217964);
+  box-shadow: inset 0 0 0 1px rgba(255, 253, 248, 0.14);
+}
+
+.teaching-block {
+  background: #fffaf1;
+  border-color: rgba(33, 28, 22, 0.1);
+}
+
+.article-section .article-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1120px) {
+  .page-hero::after {
+    width: min(46vw, 360px);
+    opacity: 0.07;
+  }
+
+  .range-trainer-panel {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-hero {
+    min-height: auto;
+    padding-top: 38px !important;
+    padding-bottom: 34px;
+  }
+
+  .page-hero::after {
+    display: none;
+  }
+
+  .page-hero h1,
+  .content-page h1 {
+    font-size: clamp(33px, 10vw, 42px);
+    line-height: 1.02;
+  }
+
+  .page-hero p:not(.eyebrow),
+  .content-page .lead,
+  .content-page > p:not(.lead),
+  .content-page > ul,
+  .content-page > ol {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tools-section,
+  .practice-mode-section,
+  .study-mode-section,
+  .analyze-lite-section,
+  .progress-dashboard-section,
+  .article-section {
+    padding-top: 34px;
+    padding-bottom: 38px;
+  }
+
+  .tool-shortcuts,
+  .article-grid,
+  .tool-layout,
+  .drill-pack-grid,
+  .analyze-command-grid,
+  .dashboard-pack-grid,
+  .badge-grid,
+  .radar-legend,
+  .concept-map-grid,
+  .concept-matrix,
+  .analyze-score-grid,
+  .analyze-plan-grid,
+  .range-compare-grid,
+  .range-diagnosis-grid,
+  .range-vs-range-bars {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tool-shortcuts a,
+  .article-card,
+  .pack-card {
+    min-height: auto;
+  }
+
+  .practice-controls,
+  .study-filters,
+  .range-editor-toolbar,
+  .review-form-grid,
+  .street-input-grid {
+    padding: 12px;
+  }
+
+  .practice-table,
+  .practice-session,
+  .analyze-form-panel,
+  .analyze-report-panel,
+  .study-browser,
+  .study-report,
+  .tool-panel {
+    box-shadow: 0 12px 30px rgba(33, 28, 22, 0.08);
+  }
+
+  .practice-routine-bar,
+  .study-command-bar,
+  .range-challenge-card {
+    gap: 12px;
+  }
+
+  .review-grid,
+  .study-report-grid,
+  .study-lens-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hand-review {
+    padding: 14px;
+  }
+
+  .hand-board {
+    min-height: 190px;
+    padding: 16px;
+  }
+
+  .content-page {
+    padding-top: 42px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-hero,
+  .section,
+  .content-page {
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+  }
+
+  .tool-result,
+  .review-output,
+  .daily-related-box,
+  .daily-route-panel,
+  .dashboard-onboarding,
+  .range-matrix-shell,
+  .feedback-stack,
+  .training-question {
+    padding: 12px;
   }
 }

@@ -32,7 +32,7 @@ const outDir = path.join(root, "dist");
 const domain = "https://smartpokerlab.com";
 const lastmod = "2026-05-10";
 const googleSiteVerification = "NtOh5bR-B1p_NFxUEfShvLhWqLvKZddo5xGLT9NkOuc";
-const assetVersion = "20260517-home-hero-v2";
+const assetVersion = "20260517-core-lovable";
 const publicPageCount = "143";
 
 const analyticsScriptSrc = (() => {
@@ -2146,7 +2146,7 @@ function articlePage(article) {
     ],
   });
   const body = `<main>
-    <article class="content-page">
+    <article class="content-page article-content-page">
       <p class="eyebrow">${article.category} · ${article.level}</p>
       <h1>${article.title}</h1>
       <p class="lead">${article.description}</p>
@@ -2180,7 +2180,7 @@ function handReviewIndex() {
     ],
   });
   const body = `<main>
-    <section class="page-hero"><p class="eyebrow">Hand Review Library</p><h1>One decision point per hand.</h1><p>Each review breaks down setup, action, beginner thinking, professional logic, GTO baseline, and exploit adjustment.</p></section>
+    <section class="page-hero hand-review-hero"><p class="eyebrow">Hand Review Library</p><h1>One decision point per hand.</h1><p>Each review breaks down setup, action, beginner thinking, professional logic, GTO baseline, and exploit adjustment.</p></section>
     
     <section class="section article-section"><div class="article-grid">${handReviews.map((hand) => `<a class="article-card" href="${rel(`/hand-review/${hand.slug}/`, currentUrl)}"><span>${hand.meta.join(" · ")}</span><h3>${hand.title}</h3><p>${hand.description}</p></a>`).join("")}</div></section>
   </main>`;
@@ -2212,7 +2212,7 @@ function handReviewPage(hand) {
     ],
   });
   const body = `<main>
-    <article class="content-page">
+    <article class="content-page hand-review-content-page">
       <p class="eyebrow">Hand Review</p>
       <h1>${hand.title}</h1>
       <p class="lead">${hand.description}</p>
@@ -2321,7 +2321,7 @@ function toolsPage() {
     ],
   });
   const body = `<main>
-    <section class="page-hero"><p class="eyebrow">Training Lab</p><h1>Study, practice, review, and track your decision leaks.</h1><p>Use Smart Score drills, range training, hand-review templates, leak reports, board texture study, pot odds practice, player type review, hand ranking, and pot odds calculation in one place.</p></section>
+    <section class="page-hero tools-hero"><p class="eyebrow">Training Lab</p><h1>Study, practice, review, and track your decision leaks.</h1><p>Use Smart Score drills, range training, hand-review templates, leak reports, board texture study, pot odds practice, player type review, hand ranking, and pot odds calculation in one place.</p></section>
     
     <section class="section tools-section">
       <div class="action-loop-banner" aria-label="Smart Poker Lab training loop">
@@ -2602,7 +2602,7 @@ function toolDetailPage(slug) {
     ],
   });
   const body = `<main>
-    <section class="page-hero"><p class="eyebrow">${tool.eyebrow}</p><h1>${tool.title}</h1><p>${tool.description}</p></section>
+    <section class="page-hero tool-detail-hero"><p class="eyebrow">${tool.eyebrow}</p><h1>${tool.title}</h1><p>${tool.description}</p></section>
     
     <section class="section tools-section standalone-tool">
       <p class="tool-note">This page is education-only. It does not provide real-money betting advice, gambling services, or platform referrals.</p>
