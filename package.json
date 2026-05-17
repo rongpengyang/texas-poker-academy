@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node src/generate-site.js",
-    "check": "node --check src/generate-site.js && node --check src/english-content.js && node --check script.js"
+    "check": "node --check src/generate-site.js && node --check src/english-content.js && node --check script.js",
+    "ui:audit": "node scripts/ui-sync-audit.mjs"
   }
 }
