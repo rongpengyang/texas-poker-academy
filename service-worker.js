@@ -1,4 +1,4 @@
-const CACHE_NAME = "smart-poker-lab-v5";
+const CACHE_NAME = "smart-poker-lab-v8-core-lovable";
 const CORE_ASSETS = [
   "/",
   "/index.html",

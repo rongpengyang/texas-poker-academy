@@ -32,7 +32,7 @@ const outDir = path.join(root, "dist");
 const domain = "https://smartpokerlab.com";
 const lastmod = "2026-05-10";
 const googleSiteVerification = "NtOh5bR-B1p_NFxUEfShvLhWqLvKZddo5xGLT9NkOuc";
-const assetVersion = "20260510-phase5n-cleanup";
+const assetVersion = "20260517-core-lovable";
 const publicPageCount = "143";
 
 const analyticsScriptSrc = (() => {
@@ -1958,20 +1958,21 @@ function homePage() {
 
   const body = `<main id="top">
     <section class="hero-section product-hero youth-hero" aria-labelledby="hero-title">
+      ${responsiveImage(assets.hero, currentUrl, "hero-bg-image", "eager")}
       <div class="hero-copy">
         <p class="eyebrow">${brand.tagline}</p>
-        <h1 id="hero-title">Train poker decisions like a modern learning app.</h1>
-        <p class="hero-lede">Smart Poker Lab turns Texas Hold'em study into a visual loop: board patterns, decision drills, hand-review reports, and browser-local progress.</p>
+        <h1 id="hero-title">Smart Poker Lab</h1>
+        <p class="hero-lede">Offline Texas Hold'em training with visual drills, hand-review reports, and browser-local progress.</p>
         <div class="hero-actions" aria-label="Quick entries">
-          <a class="primary-action" href="${rel("/training-plan/day-01/", currentUrl)}">Start Free 7-Day Challenge</a>
-          <button class="secondary-action" type="button" data-open-onboarding>Take 5-Minute Skill Check</button>
-          <a class="secondary-action" href="${rel("/tools/daily-hand/", currentUrl)}">Today's 15-Minute Workout</a>
+          <a class="primary-action" href="${rel("/training-plan/day-01/", currentUrl)}">Start 7-Day Challenge</a>
+          <button class="secondary-action" type="button" data-open-onboarding>Take Skill Check</button>
+          <a class="secondary-action" href="${rel("/tools/daily-hand/", currentUrl)}">Daily Workout</a>
           <a class="secondary-action" href="${rel("/analyze/", currentUrl)}">Analyze a Hand</a>
         </div>
         <div class="hero-metrics" aria-label="Training product highlights">
           <span><strong>4</strong> mode loop</span>
           <span><strong>30</strong> day routine</span>
-          <span><strong>${publicPageCount}</strong> lessons, drills, and review pages</span>
+          <span><strong>${publicPageCount}</strong> study pages</span>
         </div>
         <div class="action-strip" aria-label="Training loop">
           <span>Study</span>
@@ -1979,19 +1980,23 @@ function homePage() {
           <span>Review</span>
           <span>Progress</span>
         </div>
-        <div class="persona-entry" aria-label="Learning paths">
-          <a href="${rel("/tools/daily-hand/", currentUrl)}"><strong>What do I train today?</strong><span>Open the 15-minute Daily Workout</span></a>
-          <a href="${rel("/practice/", currentUrl)}"><strong>I want a focused pack</strong><span>Choose preflop, c-bet, river, math, or player-type drills</span></a>
-          <a href="${rel("/analyze/", currentUrl)}"><strong>I have a hand to review</strong><span>Build an Analyze Lite report</span></a>
-          <a href="${rel("/progress/", currentUrl)}"><strong>Where am I leaking?</strong><span>Check score, queue, and next drill</span></a>
-        </div>
       </div>
-      <div class="hero-art-wrap">
-        ${responsiveImage(assets.hero, currentUrl, "hero-art", "eager")}
-        <div class="hero-floating-card">
-          <strong>Today: BTN AJs</strong>
-          <span>Range advantage + thin value drill</span>
-        </div>
+      <div class="hero-floating-card">
+        <strong>Today: BTN AJs</strong>
+        <span>Range advantage + thin value drill</span>
+      </div>
+    </section>
+
+    <section class="section persona-start-section" aria-labelledby="persona-start-title">
+      <div class="section-heading">
+        <p class="eyebrow">Choose a path</p>
+        <h2 id="persona-start-title">Start from the decision in front of you.</h2>
+      </div>
+      <div class="persona-entry persona-start-grid" aria-label="Learning paths">
+        <a href="${rel("/tools/daily-hand/", currentUrl)}"><strong>What do I train today?</strong><span>Open the 15-minute Daily Workout</span></a>
+        <a href="${rel("/practice/", currentUrl)}"><strong>I want a focused pack</strong><span>Choose preflop, c-bet, river, math, or player-type drills</span></a>
+        <a href="${rel("/analyze/", currentUrl)}"><strong>I have a hand to review</strong><span>Build an Analyze Lite report</span></a>
+        <a href="${rel("/progress/", currentUrl)}"><strong>Where am I leaking?</strong><span>Check score, queue, and next drill</span></a>
       </div>
     </section>
     
@@ -2141,7 +2146,7 @@ function articlePage(article) {
     ],
   });
   const body = `<main>
-    <article class="content-page">
+    <article class="content-page article-content-page">
       <p class="eyebrow">${article.category} · ${article.level}</p>
       <h1>${article.title}</h1>
       <p class="lead">${article.description}</p>
@@ -2175,7 +2180,7 @@ function handReviewIndex() {
     ],
   });
   const body = `<main>
-    <section class="page-hero"><p class="eyebrow">Hand Review Library</p><h1>One decision point per hand.</h1><p>Each review breaks down setup, action, beginner thinking, professional logic, GTO baseline, and exploit adjustment.</p></section>
+    <section class="page-hero hand-review-hero"><p class="eyebrow">Hand Review Library</p><h1>One decision point per hand.</h1><p>Each review breaks down setup, action, beginner thinking, professional logic, GTO baseline, and exploit adjustment.</p></section>
     
     <section class="section article-section"><div class="article-grid">${handReviews.map((hand) => `<a class="article-card" href="${rel(`/hand-review/${hand.slug}/`, currentUrl)}"><span>${hand.meta.join(" · ")}</span><h3>${hand.title}</h3><p>${hand.description}</p></a>`).join("")}</div></section>
   </main>`;
@@ -2207,7 +2212,7 @@ function handReviewPage(hand) {
     ],
   });
   const body = `<main>
-    <article class="content-page">
+    <article class="content-page hand-review-content-page">
       <p class="eyebrow">Hand Review</p>
       <h1>${hand.title}</h1>
       <p class="lead">${hand.description}</p>
@@ -2316,7 +2321,7 @@ function toolsPage() {
     ],
   });
   const body = `<main>
-    <section class="page-hero"><p class="eyebrow">Training Lab</p><h1>Study, practice, review, and track your decision leaks.</h1><p>Use Smart Score drills, range training, hand-review templates, leak reports, board texture study, pot odds practice, player type review, hand ranking, and pot odds calculation in one place.</p></section>
+    <section class="page-hero tools-hero"><p class="eyebrow">Training Lab</p><h1>Study, practice, review, and track your decision leaks.</h1><p>Use Smart Score drills, range training, hand-review templates, leak reports, board texture study, pot odds practice, player type review, hand ranking, and pot odds calculation in one place.</p></section>
     
     <section class="section tools-section">
       <div class="action-loop-banner" aria-label="Smart Poker Lab training loop">
@@ -2597,7 +2602,7 @@ function toolDetailPage(slug) {
     ],
   });
   const body = `<main>
-    <section class="page-hero"><p class="eyebrow">${tool.eyebrow}</p><h1>${tool.title}</h1><p>${tool.description}</p></section>
+    <section class="page-hero tool-detail-hero"><p class="eyebrow">${tool.eyebrow}</p><h1>${tool.title}</h1><p>${tool.description}</p></section>
     
     <section class="section tools-section standalone-tool">
       <p class="tool-note">This page is education-only. It does not provide real-money betting advice, gambling services, or platform referrals.</p>
