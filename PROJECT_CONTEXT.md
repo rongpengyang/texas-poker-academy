@@ -1,42 +1,64 @@
-# PROJECT_CONTEXT.md
+﻿# PROJECT_CONTEXT.md
 
 ## Project Name
 Smart Poker Lab
 
-## Main Repository
-`texas-poker-academy`
+## Current Production Repository
+`rongpengyang/smartpokerlab-site`
 
-## Status
-Long-term production project.
+## Current Lovable Prototype Repository
+`rongpengyang/smartpokerlab-ui-prototype`
+
+## Current Local Production Path
+`C:\Users\tim17\Documents\SmartPokerLab\smartpokerlab-site`
+
+## Production Domain
+`https://smartpokerlab.com`
+
+## Current Site State
+- Production repo: `rongpengyang/smartpokerlab-site`
+- Domain: `smartpokerlab.com`
+- Static output directory: `dist`
+- Expected sitemap route count: 144
+- Lovable UI replacement has been merged into the production site.
+- Dify Workflow A and Dify Workflow B are active.
+- Recent completed content examples:
+  - Button Open or Fold? practice drill
+  - How to Stop Losing with Top Pair lesson
 
 ## Business Goal
-建立一个扑克教育和训练网站，专注策略学习、概率训练、手牌分析和决策能力，而不是博彩承诺。
+Build an English Texas Hold'em education and training site focused on rules, math, strategy, hand review, practice drills, and entertainment education. The site is a training product, not a gambling or commercial access service.
 
 ## Target Users
-- 想学习 Texas Hold'em 策略的人
-- 想训练概率、范围、决策能力的玩家
-- 想系统学习扑克理论的人
+- Beginners learning Texas Hold'em rules and position
+- Players training preflop ranges, pot odds, board texture, and decision quality
+- Students who want structured hand review and browser-local progress tracking
 
 ## Positioning
-Education, strategy, and training only.
+Education, strategy, practice, review, and browser-local progress only.
 
-## Do Not Do
-- 不要承诺赚钱
-- 不要写 guaranteed profit
-- 不要用博彩站语气
-- 不要做高风险合规表述
+## Production Guardrails
+- Dify must not directly edit `main`.
+- Dify must not deploy production.
+- Dify may prepare structured briefs, content drafts, audit notes, and workflow outputs for Codex review.
+- Codex is responsible for production code changes, checks, build verification, and deployment preparation.
+
+## Required Checks For Every Change
+Run all three before considering any change ready:
+
+```bash
+npm run check
+npm run build
+npm run ui:audit
+```
 
 ## Do Not Break
-- Compliance disclaimers
-- Learning content structure
-- SEO metadata
-- Existing routes
-- Analytics
-- Deployment config
-
-## Current 30-Day Focus
-- 内容结构
-- learning path
-- 小工具入口
-- 合规免责声明
-- newsletter
+- All generated public routes and sitemap generation
+- `src/english-content.js` content data
+- `src/generate-site.js` SEO, canonical, schema, and route logic
+- ComplianceStrip safe production copy
+- Mobile dock labels: Study / Practice / Review / Progress / Tools
+- Practice feedback gating
+- Range Trainer guardrails, including "Not real-time play assistance."
+- Analyze and Progress browser-local behavior
+- Vercel build: `npm run build`, output `dist`
