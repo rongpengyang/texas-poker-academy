@@ -25,6 +25,7 @@ const prohibitedTerms = [
   "withdrawal",
   "guaranteed profit",
 ];
+const expectedSitemapUrlCount = 144;
 
 const results = [];
 
@@ -140,8 +141,8 @@ const sitemapPath = path.join(root, "dist", "sitemap.xml");
 if (exists(sitemapPath)) {
   const sitemap = fs.readFileSync(sitemapPath, "utf8");
   const count = (sitemap.match(/<url>\s*<loc>/g) || sitemap.match(/<url>/g) || []).length;
-  if (count === 143) pass("sitemap URL count", String(count));
-  else fail("sitemap URL count", `expected 143, found ${count}`);
+  if (count === expectedSitemapUrlCount) pass("sitemap URL count", String(count));
+  else fail("sitemap URL count", `expected ${expectedSitemapUrlCount}, found ${count}`);
 } else {
   fail("dist/sitemap.xml exists");
 }
